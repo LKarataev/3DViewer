@@ -49,15 +49,11 @@ uninstall:
 	rm -rf $(HOME)/Applications/$(PROGRAM_NAME)/
 
 dvi:
-	$(OPEN) Readme.pdf
+	$(OPEN) Readme.md
 
 dist:
-	cd ..; mkdir $(DIST_DIR); cp -r src $(DIST_DIR); tar -czf $(DIST_DIR).tar.gz $(DIST_DIR); rm -r $(DIST_DIR)
-
-style:
-	cp ../materials/linters/.clang-format .clang-format
-	clang-format -n $(SOURCES)
-	rm -rf .clang-format
+	cd ..; mkdir $(DIST_DIR); cp -r 3DViewer $(DIST_DIR); tar -czf $(DIST_DIR).tar.gz $(DIST_DIR); \
+	rm -rf $(DIST_DIR); cp $(DIST_DIR).tar.gz ./3DViewer/; rm $(DIST_DIR).tar.gz
 
 leaks: tests
 	$(LEAK_TEST) ./test
