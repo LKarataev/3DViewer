@@ -1,10 +1,10 @@
 CC=g++
 FLAGS=-lgtest -lstdc++ -std=c++17
 WCHECK=-Werror -Wall -Wextra
-PROGRAM_NAME=Viewer3d
-COMPILATION_DIRECTORY=../build/
-SOURCE_DIRECTORY=./Viewer3d/
-DIST_DIR = Viewer3d_v2_dist
+PROGRAM_NAME=3DViewer
+COMPILATION_DIRECTORY=./build/
+SOURCE_DIRECTORY=./src/
+DIST_DIR = 3DViewer_dist
 
 ifeq ($(shell uname), Linux)
 APP=$(PROGRAM_NAME)
